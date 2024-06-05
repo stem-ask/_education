@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="sys.css">
 </head>
 <body>
-<h1><font size="10">独自関数集</font></h1>
+<h1 id="front"><font size="10">独自関数集</font></h1>
 <p class="space-B"></p>
 <!-- web初心者が作ったやつです。適当に作ったつもりはありませんが適宜改良してください。 -->
 
@@ -22,7 +22,7 @@
     <p>
     <details>
       <summary>
-      <code>pidLineTraceDistanceAction(int _edge, int _forward, int distance_cm, float p, float i, float d)</code><br><aside><p><a href="#pid">PID制御走行</a>をする</p></aside>
+      <code>pidLineTraceDistanceAction(int _edge, int _forward, int distance_cm, float p, float i, float d);</code><br><aside><p><a href="#pid">PID制御走行</a>をする</p></aside>
       </summary>
       <h2>引数</h2>
       <hr>
@@ -32,9 +32,9 @@
         <code>_edge=-1</code>:右ライントレース</li>
         <li>速度</li>
         <li>走行距離[cm]</li>
-        <li>p値</li>
-        <li>i値</li>
-        <li>d値</li>
+        <li><a href="#p">p値</a></li>
+        <li><a href="#i">i値</a></li>
+        <li><a href="#d">d値</a></li>
       </ol>
       <h2>使用例</h2>
       <hr>
@@ -48,7 +48,7 @@
     <p>
     <details>
       <summary>
-      <code>pidLineTraceDistanceAction<span class="color-b">Slower</span>(int _edge, int _forward, int distance_cm, int _min, int _delay_per_DELAY_TIME, float p, float i, float d)</code><aside><p><a href="#pid">PID制御走行</a>を減速しながらする</p></aside>
+      <code>pidLineTraceDistanceAction<span class="color-b">Slower</span>(int _edge, int _forward, int distance_cm, int _min, int _delay_per_DELAY_TIME, float p, float i, float d);</code><aside><p><a href="#pid">PID制御走行</a>を減速しながらする</p></aside>
       </summary>
       <h2>引数</h2>
       <hr>
@@ -61,9 +61,9 @@
         <li>速度下限値</li>
         <li>減少率[/ms*<code>DELAY_TIME</code>]<br>
         <code>DELAY_TIME</code>はtslp_tskの待機時間</li>
-        <li>p値</li>
-        <li>i値</li>
-        <li>d値</li>
+        <li><a href="#p">p値</a></li>
+        <li><a href="#i">i値</a></li>
+        <li><a href="#d">d値</a></li>
       </ol>
       <h2>使用例</h2>
       <hr>
@@ -76,7 +76,7 @@
     <p>
     <details>
       <summary>
-      <code>pidLineTraceDistanceAction<span class="color-r">Faster</span>(int _edge, int _forward, int distance_cm, int _max, int _delay_per_DELAY_TIME, float p, float i, float d)</code><aside><p><a href="#pid">PID制御走行</a>を加速しながらする</p></aside>
+      <code>pidLineTraceDistanceAction<span class="color-r">Faster</span>(int _edge, int _forward, int distance_cm, int _max, int _delay_per_DELAY_TIME, float p, float i, float d);</code><aside><p><a href="#pid">PID制御走行</a>を加速しながらする</p></aside>
       </summary>
       <h2>引数</h2>
       <hr>
@@ -89,9 +89,9 @@
         <li>速度上限値</li>
         <li>増加率[/ms*<code>DELAY_TIME</code>]<br>
         <code>DELAY_TIME</code>はtslp_tskの待機時間</li>
-        <li>p値</li>
-        <li>i値</li>
-        <li>d値</li>
+        <li><a href="#p">p値</a></li>
+        <li><a href="#i">i値</a></li>
+        <li><a href="#d">d値</a></li>
       </ol>
       <h2>使用例</h2>
       <hr>
@@ -109,7 +109,7 @@
     <p>
     <details>
       <summary>
-      <code>pidLineTraceColorAction(int _edge, int _forward, int _color, int _restraintAngle, float p, float i, float d)</code><aside><p><a href="#pid">PID制御走行</a>を指定色を検知するまでする</p></aside>
+      <code>pidLineTraceColorAction(int _edge, int _forward, int _color, int _restraintAngle, float p, float i, float d);</code><aside><p><a href="#pid">PID制御走行</a>を指定色を検知するまでする</p></aside>
       </summary>
       <h2>引数</h2>
       <hr>
@@ -120,9 +120,9 @@
         <li>速度</li>
         <li>検知する色(<a href="#getRgb">getRgbを参照</a>)</li>
         <li>色検知しない距離[cm]</li>
-        <li>p値</li>
-        <li>i値</li>
-        <li>d値</li>
+        <li><a href="#p">p値</a></li>
+        <li><a href="#i">i値</a></li>
+        <li><a href="#d">d値</a></li>
       </ol>
       <h2>使用例</h2>
       <hr>
@@ -135,7 +135,7 @@
     <p>
     <details>
       <summary>
-      <code>pidLineTraceColorAction<span class="color-b">Slower</span>(int _edge, int _forward, int _color, int _restraintAngle, int _min, int _delay_per_DELAY_TIME, float p, float i, float d)</code><aside><p><a href="#pid">PID制御走行</a>を減速しながら指定色を検知するまでする</p></aside>
+      <code>pidLineTraceColorAction<span class="color-b">Slower</span>(int _edge, int _forward, int _color, int _restraintAngle, int _min, int _delay_per_DELAY_TIME, float p, float i, float d);</code><aside><p><a href="#pid">PID制御走行</a>を減速しながら指定色を検知するまでする</p></aside>
       </summary>
       <h2>引数</h2>
       <hr>
@@ -149,9 +149,9 @@
         <li>速度下限値</li>
         <li>減少率[/ms*<code>DELAY_TIME</code>]<br>
         <code>DELAY_TIME</code>はtslp_tskの待機時間</li>
-        <li>p値</li>
-        <li>i値</li>
-        <li>d値</li>
+        <li><a href="#p">p値</a></li>
+        <li><a href="#i">i値</a></li>
+        <li><a href="#d">d値</a></li>
       </ol>
       <h2>使用例</h2>
       <hr>
@@ -165,13 +165,13 @@
 </p>
 <p class="space-A"></p>
 
-<h2><a href="#turn">turn走行</a>を行う関数集</h2>
+<h2><a href="#turn">曲進</a>を行う関数集</h2>
 <hr>
-<p>
-  <p>
-    <details><summary>通常turn走行</summary>
+<div>
+  <div>
+    <details><summary>通常曲進</summary>
       <p class="space-B"></p>
-      <details><summary><code>turnDistanceAction(int _forward, int distance_cm, int _turn);</code><aside><p><a href="#turn">turn走行</a>をする</p></aside></summary>
+      <details><summary><code>turnDistanceAction(int _forward, int distance_cm, int _turn);</code><aside><p><a href="#turn">曲進</a>をする</p></aside></summary>
         <h2>引数</h2>
         <hr>
         <ol>
@@ -182,12 +182,12 @@
         <h2>使用例</h2>
         <hr>
         <code>turnDistanceAction(60, 100, 10);</code><br>
-        速度60で100cmを<a href="#turnV">turn値</a>に従い曲進する。
+        速度60で100cmを<a href="#turnV">turn値</a>に従い<a href="#turn">曲進</a>する。
         <p class="space-D"></p>
       </details>
       <p class="space-B"></p>
 
-      <details><summary><code>turnDistanceAction<span class="color-b">Slower</span>(int _forward, int distance_cm, int _turn, int _min, int _delay_per_DELAY_TIME);</code><aside><p><a href="#turn">turn走行</a>を減速しつつする</p></aside></summary>
+      <details><summary><code>turnDistanceAction<span class="color-b">Slower</span>(int _forward, int distance_cm, int _turn, int _min, int _delay_per_DELAY_TIME);</code><aside><p><a href="#turn">曲進</a>を減速しつつする</p></aside></summary>
         <h2>引数</h2>
         <hr>
         <ol>
@@ -201,12 +201,12 @@
         <h2>使用例</h2>
         <hr>
         <code>turnDistanceActionSlower(60, 100, 10, 20, 5);</code><br>
-        速度60から速度20まで5*DELAY_TIME毎に減速しつつ100cmを<a href="#turnV">turn値</a>に従い曲進する。
+        速度60から速度20まで5*DELAY_TIME毎に減速しつつ100cmを<a href="#turnV">turn値</a>に従い<a href="#turn">曲進</a>する。
         <p class="space-D"></p>
       </details>
       <p class="space-B"></p>
 
-      <details><summary><code>turnDistanceAction<span class="color-r">Faster</span>(int _forward, int distance_cm, int _turn, int _max, int _delay_per_DELAY_TIME);</code><aside><p><a href="#turn">turn走行</a>を加速しつつする</p></aside></summary>
+      <details><summary><code>turnDistanceAction<span class="color-r">Faster</span>(int _forward, int distance_cm, int _turn, int _max, int _delay_per_DELAY_TIME);</code><aside><p><a href="#turn">曲進</a>を加速しつつする</p></aside></summary>
         <h2>引数</h2>
         <hr>
         <ol>
@@ -220,7 +220,7 @@
         <h2>使用例</h2>
         <hr>
         <code>turnDistanceActionFaster(20, 100, 10, 60, 5);</code><br>
-        速度20から速度60まで5*DELAY_TIME毎に加速しつつ100cmを<a href="#turnV">turn値</a>に従い曲進する。
+        速度20から速度60まで5*DELAY_TIME毎に加速しつつ100cmを<a href="#turnV">turn値</a>に従い<a href="#turn">曲進</a>する。
         <p class="space-D"></p>
       </details>
       <p class="space-B"></p>
@@ -239,7 +239,7 @@
         <h2>使用例</h2>
         <hr>
         <code>turnDistanceAction_toStraighten(60, 100, 10, 0, 5);</code><br>
-        速度60で5*DELAY_TIME毎に0まで減少する<a href="#turnV">turn値</a>に従い100cm曲進する。
+        速度60で5*DELAY_TIME毎に0まで減少する<a href="#turnV">turn値</a>に従い100cm<a href="#turn">曲進</a>する。
         <p class="space-D"></p>
       </details>
       <p class="space-B"></p>
@@ -261,17 +261,17 @@
         <h2>使用例</h2>
         <hr>
         <code>turnDistanceActionSlower_toStraighten(60, 100, 10, 0, 5, 0, 5);</code><br>
-        速度60から0まで5*DELAY_TIME毎に減速しつつ、5*DELAY_TIME毎に0まで減少する<a href="#turnV">turn値</a>に従い100cm曲進する。
+        速度60から0まで5*DELAY_TIME毎に減速しつつ、5*DELAY_TIME毎に0まで減少する<a href="#turnV">turn値</a>に従い100cm<a href="#turn">曲進</a>する。
         <p class="space-D"></p>
       </details>
       <p class="space-B"></p>
     </details>
-  </p>
+  </div>
   <p class="space-B"></p>
-  <p>
-    <details><summary>色検知版turn走行</summary>
+  <div>
+    <details><summary>色検知版曲進</summary>
       <p class="space-B"></p>
-      <details><summary><code>turnColorAction(int _forward, int _color, int _restraintDistance_cm, int _turn);</code><aside><p><a href="#turn">turn走行</a>を指定色を検知するまでする</p></aside></summary>
+      <details><summary><code>turnColorAction(int _forward, int _color, int _restraintDistance_cm, int _turn);</code><aside><p><a href="#turn">曲進</a>を指定色を検知するまでする</p></aside></summary>
         <h2>引数</h2>
         <hr>
         <ol>
@@ -283,11 +283,11 @@
         <h2>使用例</h2>
         <hr>
         <code>turnColorAction(60, 2, 20, 10);</code><br>
-        速度60で20cmまでは色検知を行わず、それ以降は黒色(番号:2)を検知するまで<a href="#turnV">turn値</a>に従い曲進する。
+        速度60で20cmまでは色検知を行わず、それ以降は黒色(番号:2)を検知するまで<a href="#turnV">turn値</a>に従い<a href="#turn">曲進</a>する。
         <p class="space-D"></p>
       </details>
       <p class="space-B"></p>
-      <details><summary><code>turnColorAction<span class="color-b">Slower</span>(int _forward, int _color, int _restraintDistance_cm, int _turn, int _min, int _delay_per_DELAY_TIME);</code><aside><p><a href="#turn">turn走行</a>を減速しながら指定色を検知するまでする</p></aside></summary>
+      <details><summary><code>turnColorAction<span class="color-b">Slower</span>(int _forward, int _color, int _restraintDistance_cm, int _turn, int _min, int _delay_per_DELAY_TIME);</code><aside><p><a href="#turn">曲進</a>を減速しながら指定色を検知するまでする</p></aside></summary>
         <h2>引数</h2>
         <hr>
         <ol>
@@ -302,7 +302,7 @@
         <h2>使用例</h2>
         <hr>
         <code>turnColorAction(60, 2, 20, 10, 0, 5);</code><br>
-        速度60から速度0まで5*DELAY_TIME毎に減速しつつ20cmまでは色検知を行わず、それ以降は黒色(番号:2)を検知するまで<a href="#turnV">turn値</a>に従い曲進する。
+        速度60から速度0まで5*DELAY_TIME毎に減速しつつ20cmまでは色検知を行わず、それ以降は黒色(番号:2)を検知するまで<a href="#turnV">turn値</a>に従い<a href="#turn">曲進</a>する。
         <p class="space-D"></p>
       </details>
       <p class="space-B"></p>
@@ -321,11 +321,11 @@
         <h2>使用例</h2>
         <hr>
         <code>turnColorAction_toStraighten(60, 10, 2, 20, 0, 5);</code><br>
-        速度60で20cmまでは色検知を行わず、それ以降は黒色(番号:2)を検知するまで5*DELAY_TIME毎に0まで減少する<a href="#turnV">turn値</a>に従い曲進する。
+        速度60で20cmまでは色検知を行わず、それ以降は黒色(番号:2)を検知するまで5*DELAY_TIME毎に0まで減少する<a href="#turnV">turn値</a>に従い<a href="#turn">曲進</a>する。
         <p class="space-D"></p>
       </details>
       <p class="space-B"></p>
-      <details><summary><code>turnColorAction<span class="color-b">Slower</span><span class="color-g">_toStraighten</span>(int _forward, int _turn, int _color, int _restraintDistance_cm, int _min_turn, int _delay_per_DELAY_TIME_turn, int _min_forward, int _delay_per_DELAY_TIME_forward);</code><aside><p><a href="#turnV">turn値</a>を弱めながら指定色を検知するまで<br>減速しつつ走行する</p></aside></summary>
+      <details><summary><code>turnColorAction<span class="color-b">Slower</span><span class="color-g">_toStraighten</span>(int _forward, int _turn, int _color, int _restraintDistance_cm, int _min_turn, int _delay_per_DELAY_TIME_turn, int _min_forward, int _delay_per_DELAY_TIME_forward);</code><aside><p><a href="#turnV">turn値</a>を弱めながら指定色を検知するまで減速しつつ走行する</p></aside></summary>
         <h2>引数</h2>
         <hr>
         <ol>
@@ -343,14 +343,14 @@
         <h2>使用例</h2>
         <hr>
         <code>turnColorActionSlower_toStraighten(60, 10, 2, 20, 0, 5, 0, 5);</code><br>
-        速度60から速度0まで5*DELAY_TIME毎に減速しつつ20cmまでは色検知を行わず、それ以降は黒色(番号:2)を検知するまで5*DELAY_TIME毎に0まで減少する<a href="#turnV">turn値</a>に従い曲進する。
+        速度60から速度0まで5*DELAY_TIME毎に減速しつつ20cmまでは色検知を行わず、それ以降は黒色(番号:2)を検知するまで5*DELAY_TIME毎に0まで減少する<a href="#turnV">turn値</a>に従い<a href="#turn">曲進</a>する。
         <p class="space-D"></p>
       </details>
       <p class="space-B"></p>
     </details>
-  </p>
+  </div>
   <p class="space-B"></p>
-  <p>
+  <div>
     <details><summary>おまけ</summary>
       <p class="space-B"></p>
       <details><summary><code>turnDriveDistanceAction(int _forward_right, int _forward_left, int distance_cm);</code><aside><p>左右モーターパワーを調整可能</p></aside>
@@ -365,12 +365,105 @@
         <h2>使用例</h2>
         <hr>
         <code>turnDriveDistanceAction(60, 10, 100);</code><br>
-        右モーターパワー60、左モーターパワー10で<br>100cmを進む
+        右モーターパワー60、左モーターパワー10で100cmを進む
         <p class="space-D"></p>
       </details>
     </details>
-  </p>
-</p>
+  </div>
+</div>
+<p class="space-A"></p>
+
+<h2>直進を行う関数集</h2>
+<hr>
+<div>
+  <details><summary>通常直進走行</summary>
+    <p class="space-B"></p>
+    <details><summary><code>forwardDistanceAction(int _forward, int distance_cm);</code><aside><p>直進走行</p></aside></summary>
+      <h2>引数</h2>
+      <hr>
+      <ol>
+        <li>速度</li>
+        <li>走行距離[cm]</li>
+      </ol>
+      <h2>使用例</h2>
+      <hr>
+      <code>forwardDistanceAction(60, 100);</code><br>
+      速度60で100cmを直進走行する
+      <p class="space-D"></p>
+    </details>
+
+    <p class="space-B"></p>
+    <details><summary><code>forwardDistanceAction<span class="color-b">Slower</span>(int _forward, int distance_cm, int _min, int _delay_per_DELAY_TIME);</code><aside><p>減速しつつ直進走行</p></aside></summary>
+      <h2>引数</h2>
+      <hr>
+      <ol>
+        <li>速度</li>
+        <li>走行距離[cm]</li>
+        <li>速度下限値</li>
+        <li>減少率[/ms*<code>DELAY_TIME</code>]<br>
+        <code>DELAY_TIME</code>はtslp_tskの待機時間</li>
+      </ol>
+      <h2>使用例</h2>
+      <hr>
+      <code>forwardDistanceAction(60, 100, 20, 5);</code><br>
+      速度60から速度20まで5*DELAY_TIME毎に減速しつつ100cmを直進走行する
+      <p class="space-D"></p>
+    </details>
+
+    <p class="space-B"></p>
+    <details><summary><code>forwardDistanceAction<span class="color-r">Faster</span>(int _forward, int distance_cm, int _max, int _delay_per_DELAY_TIME);</code><aside><p>加速しつつ直進走行</p></aside></summary>
+      <h2>引数</h2>
+      <hr>
+      <ol>
+        <li>速度</li>
+        <li>走行距離[cm]</li>
+        <li>速度上限値</li>
+        <li>増加率[/ms*<code>DELAY_TIME</code>]<br>
+        <code>DELAY_TIME</code>はtslp_tskの待機時間</li>
+      </ol>
+      <h2>使用例</h2>
+      <hr>
+      <code>forwardDistanceActionFast(20, 100, 60, 5);</code><br>
+      速度20から速度60まで5*DELAY_TIME毎に加速しつつ100cmを直進走行する
+      <p class="space-D"></p>
+    </details>
+  </details>
+  <p class="space-B"></p>
+  <details><summary>色検知版直進走行</summary>
+    <p class="space-B"></p>
+    <details><summary><code>forwardColorAction(int _forward, int _color, int _restraintDistance_cm);</code><aside><p>指定色を検知するまで直進走行</p></aside></summary>
+      <h2>引数</h2>
+      <hr>
+      <ol>
+        <li>速度</li>
+        <li>検知する色(<a href="#getRgb">getRgbを参照</a>)</li>
+        <li>色検知しない距離[cm]</li>
+      </ol>
+      <h2>使用例</h2>
+      <hr>
+      <code>forwardColorAction(60, 2, 20);</code><br>
+      速度60で20cmまでは色検知を行わず、それ以降は黒色(番号:2)を検知するまで直進する
+      <p class="space-D"></p>
+    </details>
+    <p class="space-B"></p>
+    <details><summary><code>forwardColorAction,<span class="color-b">Slower</span>(int _forward, int _color, int _restraintDistance_cm, int _min, int _delay_per_DELAY_TIME);</code><aside><p>指定色を検知するまで減速しつつ直進走行</p></aside></summary>
+      <h2>引数</h2>
+      <hr>
+      <ol>
+        <li>速度</li>
+        <li>検知する色(<a href="#getRgb">getRgbを参照</a>)</li>
+        <li>色検知しない距離[cm]</li>
+        <li>速度下限値</li>
+        <li>減少率[/ms*<code>DELAY_TIME</code>]<br>
+        <code>DELAY_TIME</code>はtslp_tskの待機時間</li>
+      </ol>
+      <h2>使用例</h2>
+      <hr>
+      <code>forwardColorActionSlower(60, 2, 20, 0, 5);</code><br>
+      速度60から速度0まで5*DELAY_TIME毎に減速しつつ、20cmまでは色検知を行わず、それ以降は黒色(番号:2)を検知するまで直進する
+      <p class="space-D"></p>
+    </details>
+  </details>            
 <p class="space-D"></p>
 
 <h2 id="getRgb">検知色番号参照(2024/5/26現在)</h2>
@@ -388,14 +481,21 @@
   <li id="line">ライントレース</li>
   <p>床面に対してラインがある時、ラインに沿って走行を行うこと。</p>
   <li id="pid">PID制御走行</li>
-  <p>P値, I値, D値の三つの値を調整することで<a href="#line">ライントレース</a>を行う。3つの値を調整するだけでよいので簡単に調整できる。<br>要するに<br><p class="space-C"></p><b>3つの値を調整するのみで滑らかな<a href="#line">ライントレース</a>を実現できる走行方法。</b></p>
-  <li id="turn">turn走行</li>
-  <p>実際にこういう言葉があるかは定かではないが、便宜上用いている。<br>当ページでは<br><p class="space-C"></p><b>指定された<a href="#turnV">turn値</a>で曲進する</b><p class="space-C"></p>という意味で用いている。</p>
+  <p><a href="#p">P値</a>, <a href="#i">I値</a>, <a href="#d">D値</a>の三つの値を調整することで<a href="#line">ライントレース</a>を行う。3つの値を調整するだけでよいので簡単に調整できる。<br>要するに<p></p><b>3つの値を調整するのみで滑らかな<a href="#line">ライントレース</a>を実現できる走行方法。</b><p></p></p>
+  <li id="p">P値</li>
+  <p>PID制御に用いる値の一つ。比例(Proportional)という意味を持っており、ラインと現在地の偏差に比例して操作量(本プログラムでは<a href="#turnV">turn値</a>)を決定する。つまり<p></p><b>現在の状況に応じて力の入れ方を決める</b><p></p></p>
+  <li id="i">I値</li>
+  <p>PID制御に用いる値の一つ。積分(Integral)という意味を持っており、ラインと現在地の偏差を累積して、その累積から操作量(本プログラムでは<a href="#turnV">turn値</a>)を決定する。つまり<p></p><b>過去の偏差の合計からカーブ中であることを察知して動きを補正する</b><p></p></p>
+  <li id="d">D値</li>
+  <p>PID制御に用いる値の一つ。微分(Differential)という意味をもっており、<b>前回の偏差</b>から<b>今回の偏差</b>を引いて、偏差の変化量を求め、その変化量から操作量(本プログラムでは<a href="#turnV">turn値</a>)を決定する。つまり<p></p><b>直近の偏差の変移から今後カーブがはじまることを予測して動きを補正する</b></p>
+  <li id="turn">曲進</li>
+  <p>実際にこういう言葉があるかは定かではないが、便宜上用いている。<br>当ページでは<p></p><b>指定された<a href="#turnV">turn値</a>で曲がりながら走行する</b><p></p>という意味で用いている。</p>
   <li id="LRline">左右ライントレース選択</a></li>
   <p>ロボットの構造上(カラーセンサが一つのみ)、右側で<a href="#line">ライントレース</a>を行うか、左側で<a href="#line">ライントレース</a>を行うかを選択する必要がある。</p>
   <li id="turnV">turn値</li>
   <p>ステアリングの度合い．範囲：-100から+100.マイナスの値は左への転回，プラスの値は右への転回になる.具体的に言えば、このパラメータはこの左右モータのパワーの差の度合いである。例えば、<b>turn</b>が+25である場合、左モータのパワーは<b>forward</b>で、右モータのパワーは<b>forward</b>の75%になり，ロボットは右へ転回する.(EV3RT C API Referenceより)</p>
 </ul>
-
+<p class="space-E"></p>
+<a href="#front">home</a>
 </body>
 </html>
