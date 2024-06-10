@@ -52,8 +52,13 @@ aside{
     color:red;
 }
 
-.color-g{
-    color:green;
+.color-dy{
+    color:rgba(156, 156, 41, 0.58);
+}
+
+.fname{
+    color:darkgreen;
+    font-weight: bold;
 }
 
 .br1{
