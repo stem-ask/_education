@@ -22,7 +22,7 @@
   <hr>
   <p>
   <details>
-    <summary>通常PID制御走行</summary>
+    <summary>距離指定PID制御走行</summary>
     <p class="space-B"></p>
     <p>
     <details>
@@ -200,7 +200,7 @@
   <div>
     <div>
       <details>
-        <summary>通常曲進</summary>
+        <summary>距離指定曲進</summary>
         <p class="space-B"></p>
         <details>
           <summary><code><span class="fname">turnDistanceAction</span>(int _forward, int distance_cm, int _turn);</code>
@@ -296,7 +296,7 @@
           <h2>使用例</h2>
           <hr>
           <code>turnDistanceAction_toStraighten(60, 100, 10, 0, 5);</code><br>
-          速度60で5*DELAY_TIME毎に0まで減少する<a href="#turnV">turn値</a>に従い100cm<a href="#turn">曲進</a>する。
+          速度60で5*DELAY_TIME毎に0まで減少していく<a href="#turnV">turn値</a>に従い100cm<a href="#turn">曲進</a>する。
           <p class="space-D"></p>
         </details>
         <p class="space-B"></p>
@@ -326,7 +326,7 @@
           <h2>使用例</h2>
           <hr>
           <code>turnDistanceActionSlower_toStraighten(60, 100, 10, 0, 5, 0, 5);</code><br>
-          速度60から0まで5*DELAY_TIME毎に減速しつつ、5*DELAY_TIME毎に0まで減少する<a href="#turnV">turn値</a>に従い100cm<a href="#turn">曲進</a>する。
+          速度60から0まで5*DELAY_TIME毎に減速しつつ、5*DELAY_TIME毎に0まで減少していく<a href="#turnV">turn値</a>に従い100cm<a href="#turn">曲進</a>する。
           <p class="space-D"></p>
         </details>
         <p class="space-B"></p>
@@ -387,7 +387,7 @@
         <p class="space-B"></p>
         <details>
           <summary>
-            <code><span class="fname">turnColorAction<span class="color-dy">_toStraighten</span></span>(int _forward, int _turn, int _color, int _restraintDistance_cm, int _min, int _delay_per_DELAY_TIME);</code>
+            <code><span class="fname">turnColorAction<span class="color-dy">_toStraighten</span></span>(int _forward, int _color, int _restraintDistance_cm, int _turn, int _min, int _delay_per_DELAY_TIME);</code>
             <aside>
               <p><a href="#turnV">turn値</a>を弱めながら指定色を検知するまで走行する</p>
             </aside>
@@ -396,9 +396,9 @@
           <hr>
           <ol>
             <li>速度</li>
-            <li><a href="#turnV">turn値</a></li>
             <li>検知する色(<a href="#getRgb">getRgbを参照</a>)</li>
             <li>色検知しない距離[cm]</li>
+            <li><a href="#turnV">turn値</a></li>
             <li>turn下限値</li>
             <li>減少率[/ms*<code>DELAY_TIME</code>]<br>
               <code>DELAY_TIME</code>はtslp_tskの待機時間
@@ -406,15 +406,15 @@
           </ol>
           <h2>使用例</h2>
           <hr>
-          <code>turnColorAction_toStraighten(60, 10, 2, 20, 0, 5);</code><br>
-          速度60で20cmまでは色検知を行わず、それ以降は黒色(番号:2)を検知するまで5*DELAY_TIME毎に0まで減少する<a href="#turnV">turn値</a>に従い<a
+          <code>turnColorAction_toStraighten(60, 2, 20, 10, 0, 5);</code><br>
+          速度60で20cmまでは色検知を行わず、それ以降は黒色(番号:2)を検知するまで5*DELAY_TIME毎に0まで減少していく<a href="#turnV">turn値</a>に従い<a
             href="#turn">曲進</a>する。
           <p class="space-D"></p>
         </details>
         <p class="space-B"></p>
         <details>
           <summary>
-            <code><span class="fname">turnColorAction<span class="color-b">Slower</span><span class="color-dy">_toStraighten</span></span>(int _forward, int _turn, int _color, int _restraintDistance_cm, int _min_turn, int _delay_per_DELAY_TIME_turn, int _min_forward, int _delay_per_DELAY_TIME_forward);</code>
+            <code><span class="fname">turnColorAction<span class="color-b">Slower</span><span class="color-dy">_toStraighten</span></span>(int _forward, int _color, int _restraintDistance_cm, int _turn, int _min_turn, int _delay_per_DELAY_TIME_turn, int _min_forward, int _delay_per_DELAY_TIME_forward);</code>
             <aside>
               <p><a href="#turnV">turn値</a>を弱めながら指定色を検知するまで減速しつつ走行する</p>
             </aside>
@@ -423,9 +423,9 @@
           <hr>
           <ol>
             <li>速度</li>
-            <li><a href="#turnV">turn値</a></li>
             <li>検知する色(<a href="#getRgb">getRgbを参照</a>)</li>
             <li>色検知しない距離[cm]</li>
+            <li><a href="#turnV">turn値</a></li>
             <li>turn下限値</li>
             <li>turn減少率[/ms*<code>DELAY_TIME</code>]<br>
               <code>DELAY_TIME</code>はtslp_tskの待機時間
@@ -437,8 +437,8 @@
           </ol>
           <h2>使用例</h2>
           <hr>
-          <code>turnColorActionSlower_toStraighten(60, 10, 2, 20, 0, 5, 0, 5);</code><br>
-          速度60から速度0まで5*DELAY_TIME毎に減速しつつ20cmまでは色検知を行わず、それ以降は黒色(番号:2)を検知するまで5*DELAY_TIME毎に0まで減少する<a
+          <code>turnColorActionSlower_toStraighten(60, 2, 20, 0, 5, 10, 0, 5);</code><br>
+          速度60から速度0まで5*DELAY_TIME毎に減速しつつ20cmまでは色検知を行わず、それ以降は黒色(番号:2)を検知するまで5*DELAY_TIME毎に0まで減少していく<a
             href="#turnV">turn値</a>に従い<a href="#turn">曲進</a>する。
           <p class="space-D"></p>
         </details>
@@ -478,7 +478,7 @@
   <hr>
   <div>
     <details>
-      <summary>通常直進走行</summary>
+      <summary>距離指定直進走行</summary>
       <p class="space-B"></p>
       <details>
         <summary><code><span class="fname">forwardDistanceAction</span>(int _forward, int distance_cm);</code>
